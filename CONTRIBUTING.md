@@ -1,4 +1,4 @@
-# Contributing to hermes-ecc
+# Contributing to awesome-sentio-plugins
 
 Thanks for contributing.
 
@@ -10,8 +10,8 @@ Thanks for contributing.
 ## Local setup
 
 ```bash
-git clone https://github.com/TheophilusChinomona/hermes-ecc.git
-cd hermes-ecc
+git clone https://github.com/TheophilusChinomona/awesome-sentio-plugins.git
+cd awesome-sentio-plugins
 python -m pip install -U pytest
 ```
 

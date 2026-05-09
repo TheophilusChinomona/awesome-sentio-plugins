@@ -1,5 +1,5 @@
 [project]
-name = "hermes-ecc"
+name = "awesome-sentio-plugins"
 version = "0.1.0"
 description = "ECC plugin packs for Hermes/Athena"
 readme = "README.md"

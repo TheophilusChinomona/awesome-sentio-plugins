@@ -1,6 +1,6 @@
-# hermes-ecc
+# awesome-sentio-plugins
 
-[![Tests](https://github.com/TheophilusChinomona/hermes-ecc/actions/workflows/tests.yml/badge.svg)](https://github.com/TheophilusChinomona/hermes-ecc/actions/workflows/tests.yml)
+[![Tests](https://github.com/TheophilusChinomona/awesome-sentio-plugins/actions/workflows/tests.yml/badge.svg)](https://github.com/TheophilusChinomona/awesome-sentio-plugins/actions/workflows/tests.yml)
 
 Standalone repository for ECC plugins for Hermes/Athena.
 
