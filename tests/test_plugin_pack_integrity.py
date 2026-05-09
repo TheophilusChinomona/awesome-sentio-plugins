@@ -29,6 +29,6 @@ def test_every_plugin_has_skills_markdown_except_router():
 
 def test_required_workflows_exist_for_ci_cd():
     workflows_dir = ROOT / ".github" / "workflows"
-    required = ["tests.yml", "lint.yml", "security.yml", "release.yml"]
+    required = ["tests.yml", "lint.yml", "security.yml", "release.yml", "deploy-gate.yml"]
     for workflow in required:
         assert (workflows_dir / workflow).is_file(), f"missing workflow {workflow}"
