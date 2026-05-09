@@ -1,0 +1,9 @@
+[project]
+name = "hermes-ecc"
+version = "0.1.0"
+description = "ECC plugin packs for Hermes/Athena"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
