@@ -25,3 +25,10 @@ def test_every_plugin_has_skills_markdown_except_router():
         skills_dir = plugin_dir / "skills"
         assert skills_dir.is_dir(), f"missing skills/ directory in {plugin_dir.name}"
         assert any(skills_dir.glob("*.md")), f"no markdown skills in {plugin_dir.name}"
+
+
+def test_required_workflows_exist_for_ci_cd():
+    workflows_dir = ROOT / ".github" / "workflows"
+    required = ["tests.yml", "lint.yml", "security.yml", "release.yml"]
+    for workflow in required:
+        assert (workflows_dir / workflow).is_file(), f"missing workflow {workflow}"
