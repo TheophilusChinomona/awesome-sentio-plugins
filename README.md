@@ -42,6 +42,21 @@ plugins/
 
 ## Usage
 
+### Interactive installer (recommended)
+
+Run the installer and choose exactly which plugins to install:
+
+```bash
+python installer.py
+```
+
+It will:
+- show all available `ecc-*` plugins
+- ask you to choose by number or `all`
+- ask for install path (defaults to `~/.hermes/plugins`)
+
+### Manual copy
+
 Copy any `ecc-*` folder into your Hermes/Athena plugins directory:
 
 ```bash

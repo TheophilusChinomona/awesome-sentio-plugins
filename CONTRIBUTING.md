@@ -24,6 +24,7 @@ python -m pytest -q
 Current tests cover:
 - ECC auto-router behavior
 - plugin pack integrity (plugin count, manifests, init modules, skills docs)
+- interactive installer selection and copy behavior
 
 ## Plugin contribution rules
 
