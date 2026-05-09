@@ -1,5 +1,7 @@
 # hermes-ecc
 
+[![Tests](https://github.com/TheophilusChinomona/hermes-ecc/actions/workflows/tests.yml/badge.svg)](https://github.com/TheophilusChinomona/hermes-ecc/actions/workflows/tests.yml)
+
 Standalone repository for ECC plugins for Hermes/Athena.
 
 ## Contents
@@ -53,6 +55,15 @@ cp -r plugins/ecc-* ~/.hermes/plugins/
 ```
 
 Then restart Hermes/Athena and list skills/plugins to verify they are available.
+
+## Testing
+
+Run tests locally:
+
+```bash
+python -m pip install -U pytest
+python -m pytest -q
+```
 
 ## Notes
 
