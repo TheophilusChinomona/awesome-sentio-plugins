@@ -55,6 +55,20 @@ It will:
 - ask you to choose by number or `all`
 - ask for install path (defaults to `~/.hermes/plugins`)
 
+### Non-interactive installer (CI/automation)
+
+Install specific plugins:
+
+```bash
+python installer.py --plugins ecc-core,ecc-python --target ~/.hermes/plugins
+```
+
+Install all plugins:
+
+```bash
+python installer.py --plugins all --target ~/.hermes/plugins
+```
+
 ### Manual copy
 
 Copy any `ecc-*` folder into your Hermes/Athena plugins directory:

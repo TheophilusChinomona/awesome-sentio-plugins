@@ -1,6 +1,11 @@
 from pathlib import Path
 
-from installer import discover_plugins, parse_selection, install_selected_plugins
+from installer import (
+    discover_plugins,
+    parse_selection,
+    install_selected_plugins,
+    parse_plugin_names,
+)
 
 
 def test_discover_plugins_sorted(tmp_path):
@@ -26,6 +31,26 @@ def test_parse_selection_rejects_out_of_range():
         parse_selection("5", 4)
     except ValueError as exc:
         assert "out of range" in str(exc)
+    else:
+        raise AssertionError("expected ValueError")
+
+
+def test_parse_plugin_names_all_keyword():
+    available = ["ecc-alpha", "ecc-beta"]
+    assert parse_plugin_names("all", available) == available
+
+
+def test_parse_plugin_names_csv_validates_names():
+    available = ["ecc-alpha", "ecc-beta", "ecc-gamma"]
+    assert parse_plugin_names("ecc-gamma,ecc-alpha", available) == ["ecc-alpha", "ecc-gamma"]
+
+
+def test_parse_plugin_names_rejects_unknown():
+    available = ["ecc-alpha", "ecc-beta"]
+    try:
+        parse_plugin_names("ecc-missing", available)
+    except ValueError as exc:
+        assert "unknown plugin" in str(exc)
     else:
         raise AssertionError("expected ValueError")
 
