@@ -8,7 +8,7 @@ current user turn context.
 from __future__ import annotations
 
 import re
-from typing import Dict, List
+from typing import List
 
 # Keep mapping minimal and deterministic.
 _RULES = [

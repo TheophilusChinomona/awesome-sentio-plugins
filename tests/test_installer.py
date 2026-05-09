@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from installer import (
     discover_plugins,
     parse_selection,
