@@ -1,0 +1,42 @@
+name: deploy-gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment environment"
+        required: true
+        default: production
+        type: choice
+        options:
+          - staging
+          - production
+      ref:
+        description: "Git ref to validate"
+        required: true
+        default: main
+
+jobs:
+  deploy-gate:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Show target
+        run: |
+          echo "Environment: ${{ inputs.environment }}"
+          echo "Ref: ${{ inputs.ref }}"
+
+      - name: Run smoke check
+        env:
+          SMOKE_URL: ${{ secrets.PRODUCTION_SMOKE_URL }}
+        run: |
+          if [ -z "$SMOKE_URL" ]; then
+            echo "Missing required secret: PRODUCTION_SMOKE_URL"
+            exit 1
+          fi
+          curl -fsSL --max-time 15 "$SMOKE_URL" > /dev/null
+          echo "Smoke check passed"
